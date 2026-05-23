@@ -23,6 +23,10 @@ body {
     color: #24D680;
 }
 
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .nav-btn {
     list-style: none;
