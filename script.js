@@ -1,3 +1,13 @@
+function doStuff() {
+    console.log("Doing stuff")
+    // getElementById
+
+    // setInnerHTML
+
+
+
+}
+
 function toDecimal(str, base) {
     const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     str = str.toUpperCase();
