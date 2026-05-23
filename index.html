@@ -1,4 +1,47 @@
 <!doctype html>
-<meta charset=utf-8>
-<title>eppom</title>
-<p>Hello Cat!
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eppom</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo" id="LogoBtn">eppom</div>
+
+    <ul class="nav-btn">
+        <li id="HomeBtn">Home</li>
+        <li id="AboutBtn">About</li>
+        <li id="BaseBtn">Base-conv</li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h1>Hello Cat!</h1>
+    <p>Welcome to my website.</p>
+</div>
+
+<script>
+
+    window.onload = function() {
+
+        const button = document.getElementById("BaseBtn");
+
+        button.addEventListener("click", function() {
+
+            document.querySelector(".content").innerHTML = `
+            <h1>Base Conversation Page</h1>
+            <p>You clicked the button.</p>
+        `;
+
+        });
+
+    };
+
+</script>
+</body>
+</html>
