@@ -1,12 +1,23 @@
 function doStuff() {
-    console.log("Doing stuff")
-    // getElementById
+    console.log("Doing stuff");
 
-    // setInnerHTML
+    try {
+        const number = document.getElementById("numberInput").value.trim();
+        const originbase = parseInt(document.getElementById("numberBase").value);
+        const convbase = parseInt(document.getElementById("convBase").value);
 
+        const decimal = toDecimal(number, originbase);
+        const result = fromDecimal(decimal, convbase);
 
-
+        document.getElementById("result").innerHTML = `Result: ${result}`;
+    }
+    catch (err) {
+        document.getElementById("result").innerHTML = `Error: ${err.message}`;
+        console.error(err);
+    }
 }
+
+// ---------- conversion functions ----------
 
 function toDecimal(str, base) {
     const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -16,11 +27,10 @@ function toDecimal(str, base) {
     let power = 0;
 
     for (let i = str.length - 1; i >= 0; i--) {
-        const char = str[i];
-        const digit = digits.indexOf(char);
+        const digit = digits.indexOf(str[i]);
 
         if (digit === -1 || digit >= Math.abs(base)) {
-            throw new Error(`Invalid digit '${char}' for base ${base}`);
+            throw new Error(`Invalid digit '${str[i]}' for base ${base}`);
         }
 
         value += digit * Math.pow(base, power);
@@ -31,35 +41,29 @@ function toDecimal(str, base) {
 }
 
 function fromDecimal(num, base) {
+    const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     if (base === 0 || base === 1 || base === -1) {
         throw new Error("Unsupported base");
     }
-
-    const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     if (num === 0) return "0";
 
     let result = "";
     let n = num;
 
-    if (base > 0) {
-        while (n > 0) {
-            const remainder = n % base;
-            result = digits[remainder] + result;
-            n = Math.floor(n / base);
-        }
-    } else {
-        while (n !== 0) {
-            let remainder = n % base;
-            n = Math.trunc(n / base);
+    // handle negative bases AND negative numbers correctly
+    while (n !== 0) {
+        let remainder = n % base;
+        n = Math.trunc(n / base);
 
-            if (remainder < 0) {
-                remainder += Math.abs(base);
-                n += 1;
-            }
-
-            result = digits[remainder] + result;
+        // fix negative remainder case
+        if (remainder < 0) {
+            remainder += Math.abs(base);
+            n += 1;
         }
+
+        result = digits[remainder] + result;
     }
 
     return result;
