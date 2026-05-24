@@ -97,3 +97,9 @@ body {
 #submitBtn:hover {
     opacity: 0.8;
 }
+
+#techWarning {
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+}
