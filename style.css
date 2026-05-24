@@ -39,13 +39,13 @@ body {
 
 .nav-btn a {
     text-decoration: none;
-    color: white;
+    color: #eeffff;
 
     transition: color 0.2s ease;
 }
 
 .nav-btn a:hover {
-    color: orange;
+    color: #f6af16;
 }
 
 /* PAGE CONTENT */

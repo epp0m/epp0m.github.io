@@ -20,7 +20,7 @@ function doStuff() {
 // ---------- conversion functions ----------
 
 function toDecimal(str, base) {
-    const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/";
     str = str.toUpperCase();
 
     let value = 0;
