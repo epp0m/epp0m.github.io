@@ -41,7 +41,7 @@ function toDecimal(str, base) {
 }
 
 function fromDecimal(num, base) {
-    const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/";
 
     if (base === 0 || base === 1 || base === -1) {
         throw new Error("Unsupported base");
