@@ -17,11 +17,10 @@ function doStuff() {
     }
 }
 
-// ---------- conversion functions ----------
+
 
 function toDecimal(str, base) {
     const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/";
-    str = str.toUpperCase();
 
     let value = 0;
     let power = 0;
@@ -52,12 +51,10 @@ function fromDecimal(num, base) {
     let result = "";
     let n = num;
 
-    // handle negative bases AND negative numbers correctly
     while (n !== 0) {
         let remainder = n % base;
         n = Math.trunc(n / base);
 
-        // fix negative remainder case
         if (remainder < 0) {
             remainder += Math.abs(base);
             n += 1;
