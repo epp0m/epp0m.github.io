@@ -111,20 +111,31 @@ body {
     font-style: normal;
     font-display: swap;
 }
+
+.rules-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
 .rules {
-    display: inline-block;
     white-space: pre-line;
-    text-align: -webkit-center;
-    margin-top: 100px;
+    margin-top: 80px;
     font-size: 25px;
-    font-family: 'Baskerville';
+    font-family: 'Baskervville';
     line-height: 41px;
+}
+.title-SO-container {
+    max-width: 10000px;
+    margin: 0 auto;
+    padding: 0 0px;
+    text-align: center;
 }
 .title-SO {
     white-space: pre-line;
-    text-align: center;
-    margin-top: 50px;
-    font-size: 25px;
-    font-family: 'Baskerville';
-    line-height: 0;
+    margin-top: 30px;
+    font-size: 60px;
+    font-family: 'Baskervville';
+    line-height: 50px;
 }
