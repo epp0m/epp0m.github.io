@@ -103,3 +103,28 @@ body {
     bottom: 0;
     font-size: 12px;
 }
+
+@font-face {
+    font-family: 'Baskervville';
+    src: url('fonts/Baskervville-Regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+.rules {
+    display: inline-block;
+    white-space: pre-line;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 25px;
+    font-family: Baskervville;
+    line-height: 41px;
+}
+.title-SO {
+    white-space: pre-line;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+    font-family: Baskervville;
+    line-height: 0px;
+}

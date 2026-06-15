@@ -179,12 +179,8 @@ function normalize_digits(digits, fbase) {
 
 function base_to_base(digits, fbase1, fbase2) {
     let a = fbase_to_binary(digits, fbase1);
-    if (isNaN(a)) throw new Error(`Error with base ${fbase1.value()}. (1)`);
 
     let b = binary_to_fbase(a, fbase2);
-    if ((b[0] !== '-' && isNaN(b[0])) || (isNaN(b[1]) && b[1] !== '.')) {
-        throw new Error(`Error with base ${fbase2.value()}. (2)`);
-    }
 
     // how many digits are in the fractional part
     const decimalIndex = b.indexOf('.');
