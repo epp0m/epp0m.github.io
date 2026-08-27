@@ -20,7 +20,7 @@ body {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #24D680;
+    color: #05d2be;
 }
 
 .logo a {
@@ -45,7 +45,7 @@ body {
 }
 
 .nav-btn a:hover {
-    color: #f6af16;
+    color: #fab166;
 }
 
 /* PAGE CONTENT */
